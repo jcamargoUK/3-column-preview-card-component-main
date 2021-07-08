@@ -6,6 +6,7 @@
   /* Neutral */
   --transparent-white: hsla(0, 0%, 100%, 0.75);
   --very-light-gray: hsl(0, 0%, 95%);
+  --border-radius: 10px;
   /* Typograpy */
   /* font-family: 'Big Shoulders Display', cursive; */
   /* font-family: 'Lexend Deca', sans-serif; */
@@ -21,6 +22,8 @@ h1{
   font-family: 'Big Shoulders Display', cursive;
   text-transform: uppercase;
   color: var(--very-light-gray);
+  text-align: left;
+  margin-left: 30px;
 }
 p{
   font-family: 'Lexend Deca', sans-serif;
@@ -40,19 +43,24 @@ p{
   display: flex;
   flex-direction: column;
   width: 80%;
-  border: 1px solid;
   position: absolute; 
   margin-left: 37px;
   top: 40px;
 }
+
 .car1{
   background-color: var(--Bright-orange);
+  border-top-right-radius: var(--border-radius);
+  border-top-left-radius: var(--border-radius);
 }
 .car2{
   background-color: var(--Dark-cyan);
 }
 .car3{
   background-color: var(--Very-dark-cyan);
+  border-bottom-right-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+  margin-bottom: 30px;
 }
 .image{
   position: absolute;
@@ -62,7 +70,7 @@ p{
   margin-bottom: 30px;
 }
 .picture{
-  margin-left: 40px;
+  margin-left: 35px;
   margin-top: 40px;
   background-repeat: no-repeat;
   height: 40px;
@@ -77,6 +85,47 @@ p{
   background-image: url(images/icon-luxury.svg);  
 }
 button{
-  background-color: transparent;
-  color: pink;
+  background-color: var(--very-light-gray);
+  margin-left: -140px;
+  margin-top: 10px;
+  margin-bottom: 35px;
+  padding: 10px;
+  border-radius: 20px;
+  width: 100px;
+  border-style: none;
 }
+.bt1{
+  color: var(--Bright-orange);
+}
+.bt2{
+  color: var(--Dark-cyan);
+}
+.bt3{
+  color: var(--Very-dark-cyan);
+}
+
+@media screen and (min-width: 376px) {
+  .content{
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+  }
+  .car1{
+    border-top-right-radius: 0;
+    border-bottom-left-radius: var(--border-radius);
+  }
+  .car3{
+    border-top-right-radius: var(--border-radius);
+    border-bottom-left-radius: 0;
+    margin-bottom: 0;
+  }
+  button{
+    margin-top: 50px;
+    margin-left: -110px;
+  }
+}
+
